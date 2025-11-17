@@ -1,13 +1,10 @@
-# PHP
-# Test and package your PHP project.
-# Add steps that run tests, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/php
+# PHP Laravel pipeline op self-hosted agent
 
 trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default   # naam van de agent pool waarin jouw self-hosted agent zit
 
 variables:
   phpVersion: 8.1
@@ -23,4 +20,4 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+  displayName: 'Composer install'
